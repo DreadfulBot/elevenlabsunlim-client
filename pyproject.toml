@@ -1,5 +1,5 @@
 [project]
-name = "openapi_client"
+name = "elevenlabsunlimited"
 version = "1.0.0"
 description = "Voicer API - Система озвучки текста"
 authors = [
