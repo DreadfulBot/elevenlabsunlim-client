@@ -1,11 +1,11 @@
-# openapi_client.Api
+# openapi_client.CommonInfoApi
 
 All URIs are relative to *https://elevenlabs-unlimited.net*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**health_check_health_get**](Api.md#health_check_health_get) | **GET** /health | Проверка состояния сервиса
-[**root_get**](Api.md#root_get) | **GET** / | Информация о сервисе
+[**health_check_health_get**](CommonInfoApi.md#health_check_health_get) | **GET** /health | Проверка состояния сервиса
+[**root_get**](CommonInfoApi.md#root_get) | **GET** / | Информация о сервисе
 
 
 # **health_check_health_get**
@@ -33,15 +33,15 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.Api(api_client)
+    api_instance = openapi_client.CommonInfoApi(api_client)
 
     try:
         # Проверка состояния сервиса
         api_response = api_instance.health_check_health_get()
-        print("The response of Api->health_check_health_get:\n")
+        print("The response of CommonInfoApi->health_check_health_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling Api->health_check_health_get: %s\n" % e)
+        print("Exception when calling CommonInfoApi->health_check_health_get: %s\n" % e)
 ```
 
 
@@ -96,15 +96,15 @@ configuration = openapi_client.Configuration(
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.Api(api_client)
+    api_instance = openapi_client.CommonInfoApi(api_client)
 
     try:
         # Информация о сервисе
         api_response = api_instance.root_get()
-        print("The response of Api->root_get:\n")
+        print("The response of CommonInfoApi->root_get:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling Api->root_get: %s\n" % e)
+        print("Exception when calling CommonInfoApi->root_get: %s\n" % e)
 ```
 
 

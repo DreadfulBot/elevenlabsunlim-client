@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Voicer API - Система озвучки текста
 
@@ -14,31 +13,48 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from openapi_client.models.http_validation_error import HTTPValidationError
-    from openapi_client.models.location_inner import LocationInner
-    from openapi_client.models.task_response import TaskResponse
-    from openapi_client.models.user_stats import UserStats
-    from openapi_client.models.validation_error import ValidationError
-    from openapi_client.models.voice_request import VoiceRequest
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
+import unittest
 
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
-from openapi_client.models.http_validation_error import HTTPValidationError
-from openapi_client.models.location_inner import LocationInner
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.user_stats import UserStats
-from openapi_client.models.validation_error import ValidationError
-from openapi_client.models.voice_request import VoiceRequest
+from openapi_client.api.default_api import DefaultApi
 
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
+
+class TestDefaultApi(unittest.TestCase):
+    """DefaultApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = DefaultApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_create_voice_task_api_v1_voice_synthesize_post(self) -> None:
+        """Test case for create_voice_task_api_v1_voice_synthesize_post
+
+        Создать задачу озвучки
+        """
+        pass
+
+    def test_download_audio_api_v1_voice_download_task_id_get(self) -> None:
+        """Test case for download_audio_api_v1_voice_download_task_id_get
+
+        Скачать аудиофайл
+        """
+        pass
+
+    def test_get_task_status_api_v1_voice_status_task_id_get(self) -> None:
+        """Test case for get_task_status_api_v1_voice_status_task_id_get
+
+        Проверить статус задачи
+        """
+        pass
+
+    def test_get_user_stats_api_v1_user_stats_get(self) -> None:
+        """Test case for get_user_stats_api_v1_user_stats_get
+
+        Статистика пользователя
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

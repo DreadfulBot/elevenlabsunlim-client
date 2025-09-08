@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Voicer API - Система озвучки текста
 
@@ -14,31 +13,27 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from openapi_client.models.http_validation_error import HTTPValidationError
-    from openapi_client.models.location_inner import LocationInner
-    from openapi_client.models.task_response import TaskResponse
-    from openapi_client.models.user_stats import UserStats
-    from openapi_client.models.validation_error import ValidationError
-    from openapi_client.models.voice_request import VoiceRequest
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
+import unittest
 
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
-from openapi_client.models.http_validation_error import HTTPValidationError
-from openapi_client.models.location_inner import LocationInner
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.user_stats import UserStats
-from openapi_client.models.validation_error import ValidationError
-from openapi_client.models.voice_request import VoiceRequest
+from openapi_client.api.user_api import UserApi
 
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
+
+class TestUserApi(unittest.TestCase):
+    """UserApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = UserApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_get_user_stats(self) -> None:
+        """Test case for get_user_stats
+
+        Статистика пользователя
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

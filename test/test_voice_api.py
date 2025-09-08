@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Voicer API - Система озвучки текста
 
@@ -14,31 +13,27 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from openapi_client.models.http_validation_error import HTTPValidationError
-    from openapi_client.models.location_inner import LocationInner
-    from openapi_client.models.task_response import TaskResponse
-    from openapi_client.models.user_stats import UserStats
-    from openapi_client.models.validation_error import ValidationError
-    from openapi_client.models.voice_request import VoiceRequest
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
+import unittest
 
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
-from openapi_client.models.http_validation_error import HTTPValidationError
-from openapi_client.models.location_inner import LocationInner
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.user_stats import UserStats
-from openapi_client.models.validation_error import ValidationError
-from openapi_client.models.voice_request import VoiceRequest
+from openapi_client.api.voice_api import VoiceApi
 
-""",
-            name=__name__,
-            doc=__doc__,
-        )
-    )
+
+class TestVoiceApi(unittest.TestCase):
+    """VoiceApi unit test stubs"""
+
+    def setUp(self) -> None:
+        self.api = VoiceApi()
+
+    def tearDown(self) -> None:
+        pass
+
+    def test_voice_create_task(self) -> None:
+        """Test case for voice_create_task
+
+        Создать задачу озвучки
+        """
+        pass
+
+
+if __name__ == '__main__':
+    unittest.main()

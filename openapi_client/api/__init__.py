@@ -1,6 +1,20 @@
 # flake8: noqa
 
-# import apis into api package
-from openapi_client.api.api import Api
-from openapi_client.api.api import Api
+if __import__("typing").TYPE_CHECKING:
+    # import apis into api package
+    from openapi_client.api.voice_api import VoiceApi
+    
+else:
+    from lazy_imports import LazyModule, as_package, load
 
+    load(
+        LazyModule(
+            *as_package(__file__),
+            """# import apis into api package
+from openapi_client.api.voice_api import VoiceApi
+
+""",
+            name=__name__,
+            doc=__doc__,
+        )
+    )

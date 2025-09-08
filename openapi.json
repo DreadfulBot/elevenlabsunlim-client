@@ -1,0 +1,437 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "🎤 Voicer API - Система озвучки текста",
+    "description": "\n## 🎯 **Описание сервиса**\n\n**Voicer API** — это современная система для преобразования текста в речь с использованием технологий ElevenLabs.\n\n### ✨ **Основные возможности:**\n- 🎭 **Более 50 голосов** различных языков и стилей\n- 🚀 **Быстрая обработка** больших текстов (до 500,000 символов)\n- 📊 **Отслеживание прогресса** выполнения задач в реальном времени\n- 🔒 **Безопасная авторизация** по токенам\n- 📱 **Простая интеграция** через REST API\n\n### 🌐 **Базовый URL:**\n```\nhttps://elevenlabs-unlimited.net/api/v1\n```\n\n### 🔑 **Авторизация:**\nВсе запросы требуют заголовок авторизации:\n```\nAuthorization: Bearer YOUR_API_TOKEN\n```\n\n### 📋 **Поддерживаемые модели:**\n- `eleven_multilingual_v2` — Многоязычная модель (рекомендуется)\n- `eleven_turbo_v2` — Быстрая модель для коротких текстов  \n- `eleven_turbo_v2_5` — Улучшенная быстрая модель\n- `eleven_v3` — Новейшая модель с улучшенным качеством\n\n### 📞 **Поддержка:**\n- 📧 Email: support@voicer-api.com\n- 💬 Telegram: @voicer_support\n    ",
+    "contact": {
+      "name": "Voicer API Support",
+      "email": "support@voicer-api.com"
+    },
+    "license": {
+      "name": "Proprietary License",
+      "url": "https://voicer-api.com/license"
+    },
+    "version": "2.0.0"
+  },
+  "servers": [
+    {
+      "url": "https://elevenlabs-unlimited.net",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "🔍 Общая информация"
+        ],
+        "summary": "🏠 Информация о сервисе",
+        "description": "Получить основную информацию о Voicer API и проверить доступность сервиса",
+        "operationId": "root__get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": [
+          "🔍 Общая информация"
+        ],
+        "summary": "💚 Проверка состояния сервиса",
+        "description": "Проверить работоспособность API и подключений к базе данных",
+        "operationId": "health_check_health_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/voice/synthesize": {
+      "post": {
+        "tags": [
+          "🎵 Озвучка"
+        ],
+        "summary": "🎤 Создать задачу озвучки",
+        "description": "Создать новую задачу для преобразования текста в речь",
+        "operationId": "create_voice_task_api_v1_voice_synthesize_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VoiceRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/TaskResponse"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    },
+    "/api/v1/voice/status/{task_id}": {
+      "get": {
+        "tags": [
+          "🎵 Озвучка"
+        ],
+        "summary": "📊 Проверить статус задачи",
+        "description": "Получить текущий статус и прогресс выполнения задачи озвучки",
+        "operationId": "get_task_status_api_v1_voice_status__task_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/voice/download/{task_id}": {
+      "get": {
+        "tags": [
+          "🎵 Озвучка"
+        ],
+        "summary": "⬇️ Скачать аудиофайл",
+        "description": "Скачать готовый аудиофайл завершенной задачи озвучки",
+        "operationId": "download_audio_api_v1_voice_download__task_id__get",
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "task_id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "title": "Task Id"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/user/stats": {
+      "get": {
+        "tags": [
+          "👤 Пользователь"
+        ],
+        "summary": "📈 Статистика пользователя",
+        "description": "Получить подробную статистику использования API текущим пользователем",
+        "operationId": "get_user_stats_api_v1_user_stats_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UserStats"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "HTTPBearer": []
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "HTTPValidationError": {
+        "properties": {
+          "detail": {
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            },
+            "type": "array",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "title": "HTTPValidationError"
+      },
+      "TaskResponse": {
+        "properties": {
+          "task_id": {
+            "type": "string",
+            "title": "Task Id",
+            "description": "Уникальный идентификатор задачи",
+            "example": "550e8400-e29b-41d4-a716-446655440000"
+          },
+          "status": {
+            "type": "string",
+            "title": "Status",
+            "description": "Текущий статус задачи",
+            "example": "pending"
+          },
+          "message": {
+            "type": "string",
+            "title": "Message",
+            "description": "Сообщение о результате создания",
+            "example": "Задача успешно создана и добавлена в очередь"
+          },
+          "chunks_count": {
+            "type": "integer",
+            "title": "Chunks Count",
+            "description": "Количество фрагментов для обработки",
+            "example": 3
+          },
+          "estimated_time": {
+            "type": "number",
+            "title": "Estimated Time",
+            "description": "Примерное время выполнения в секундах",
+            "example": 45.5
+          }
+        },
+        "type": "object",
+        "required": [
+          "task_id",
+          "status",
+          "message",
+          "chunks_count",
+          "estimated_time"
+        ],
+        "title": "TaskResponse",
+        "description": "## ✅ Ответ при создании задачи озвучки\n\nСодержит информацию о созданной задаче и прогнозируемом времени выполнения."
+      },
+      "UserStats": {
+        "properties": {
+          "user_id": {
+            "type": "string",
+            "title": "User Id",
+            "description": "Уникальный идентификатор пользователя",
+            "example": "user_123456"
+          },
+          "total_characters": {
+            "type": "integer",
+            "title": "Total Characters",
+            "description": "Общий лимит символов по тарифу",
+            "example": 100000
+          },
+          "used_characters": {
+            "type": "integer",
+            "title": "Used Characters",
+            "description": "Использовано символов",
+            "example": 25000
+          },
+          "remaining_characters": {
+            "type": "integer",
+            "title": "Remaining Characters",
+            "description": "Осталось символов",
+            "example": 75000
+          },
+          "total_tasks": {
+            "type": "integer",
+            "title": "Total Tasks",
+            "description": "Всего создано задач",
+            "example": 15
+          },
+          "completed_tasks": {
+            "type": "integer",
+            "title": "Completed Tasks",
+            "description": "Успешно завершенных задач",
+            "example": 12
+          },
+          "active_tasks": {
+            "type": "integer",
+            "title": "Active Tasks",
+            "description": "Задач в процессе выполнения",
+            "example": 2
+          }
+        },
+        "type": "object",
+        "required": [
+          "user_id",
+          "total_characters",
+          "used_characters",
+          "remaining_characters",
+          "total_tasks",
+          "completed_tasks",
+          "active_tasks"
+        ],
+        "title": "UserStats",
+        "description": "## 📈 Статистика использования API\n\nПодробная информация об использовании API текущим пользователем."
+      },
+      "ValidationError": {
+        "properties": {
+          "loc": {
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            },
+            "type": "array",
+            "title": "Location"
+          },
+          "msg": {
+            "type": "string",
+            "title": "Message"
+          },
+          "type": {
+            "type": "string",
+            "title": "Error Type"
+          }
+        },
+        "type": "object",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "title": "ValidationError"
+      },
+      "VoiceRequest": {
+        "properties": {
+          "text": {
+            "type": "string",
+            "maxLength": 500000,
+            "minLength": 1,
+            "title": "Text",
+            "description": "Текст для озвучки (от 1 до 500,000 символов)",
+            "example": "Привет! Это пример текста для озвучки с помощью Voicer API."
+          },
+          "voice_id": {
+            "type": "string",
+            "title": "Voice Id",
+            "description": "Уникальный ID голоса ElevenLabs",
+            "default": "AB9XsbSA4eLG12t2myjN",
+            "example": "AB9XsbSA4eLG12t2myjN"
+          },
+          "model_id": {
+            "type": "string",
+            "title": "Model Id",
+            "description": "ID модели для синтеза речи",
+            "default": "eleven_multilingual_v2",
+            "example": "eleven_multilingual_v2"
+          },
+          "voice_settings": {
+            "anyOf": [
+              {
+                "type": "object"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Voice Settings",
+            "description": "Дополнительные настройки голоса (скорость, стабильность и т.д.)",
+            "example": {
+              "clarity": 0.75,
+              "speed": 1.0,
+              "stability": 0.5
+            }
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "VoiceRequest",
+        "description": "## 📝 Запрос на создание задачи озвучки\n\nМодель данных для создания новой задачи преобразования текста в речь."
+      }
+    },
+    "securitySchemes": {
+      "HTTPBearer": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  }
+}

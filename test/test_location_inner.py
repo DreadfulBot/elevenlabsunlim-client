@@ -1,6 +1,5 @@
 # coding: utf-8
 
-# flake8: noqa
 """
     Voicer API - Система озвучки текста
 
@@ -14,31 +13,39 @@
 """  # noqa: E501
 
 
-if __import__("typing").TYPE_CHECKING:
-    # import models into model package
-    from openapi_client.models.http_validation_error import HTTPValidationError
-    from openapi_client.models.location_inner import LocationInner
-    from openapi_client.models.task_response import TaskResponse
-    from openapi_client.models.user_stats import UserStats
-    from openapi_client.models.validation_error import ValidationError
-    from openapi_client.models.voice_request import VoiceRequest
-    
-else:
-    from lazy_imports import LazyModule, as_package, load
+import unittest
 
-    load(
-        LazyModule(
-            *as_package(__file__),
-            """# import models into model package
-from openapi_client.models.http_validation_error import HTTPValidationError
 from openapi_client.models.location_inner import LocationInner
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.user_stats import UserStats
-from openapi_client.models.validation_error import ValidationError
-from openapi_client.models.voice_request import VoiceRequest
 
-""",
-            name=__name__,
-            doc=__doc__,
+class TestLocationInner(unittest.TestCase):
+    """LocationInner unit test stubs"""
+
+    def setUp(self):
+        pass
+
+    def tearDown(self):
+        pass
+
+    def make_instance(self, include_optional) -> LocationInner:
+        """Test LocationInner
+            include_optional is a boolean, when False only required
+            params are included, when True both required and
+            optional params are included """
+        # uncomment below to create an instance of `LocationInner`
+        """
+        model = LocationInner()
+        if include_optional:
+            return LocationInner(
+            )
+        else:
+            return LocationInner(
         )
-    )
+        """
+
+    def testLocationInner(self):
+        """Test LocationInner"""
+        # inst_req_only = self.make_instance(include_optional=False)
+        # inst_req_and_optional = self.make_instance(include_optional=True)
+
+if __name__ == '__main__':
+    unittest.main()
