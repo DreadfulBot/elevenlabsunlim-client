@@ -5,7 +5,7 @@ description = "Voicer API - Система озвучки текста"
 authors = [
   {name = "Voicer API Support",email = "support@voicer-api.com"},
 ]
-license = "Proprietary License"
+license = { text = "Proprietary License" }
 readme = "README.md"
 keywords = ["OpenAPI", "OpenAPI-Generator", "Voicer API - Система озвучки текста"]
 requires-python = ">=3.9"
