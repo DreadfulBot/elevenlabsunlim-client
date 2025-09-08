@@ -3,9 +3,11 @@
 .gitlab-ci.yml
 .travis.yml
 README.md
+docs/CommonApi.md
 docs/HTTPValidationError.md
 docs/LocationInner.md
 docs/TaskResponse.md
+docs/UserApi.md
 docs/UserStats.md
 docs/ValidationError.md
 docs/VoiceApi.md
@@ -13,6 +15,8 @@ docs/VoiceRequest.md
 git_push.sh
 openapi_client/__init__.py
 openapi_client/api/__init__.py
+openapi_client/api/common_api.py
+openapi_client/api/user_api.py
 openapi_client/api/voice_api.py
 openapi_client/api_client.py
 openapi_client/api_response.py

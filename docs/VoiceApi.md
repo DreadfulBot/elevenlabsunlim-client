@@ -5,7 +5,7 @@ All URIs are relative to *https://elevenlabs-unlimited.net*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**download_audio**](VoiceApi.md#download_audio) | **GET** /api/v1/voice/download/{task_id} | Скачать аудиофайл
-[**get_task_status_api_v1_voice_status_task_id_get**](VoiceApi.md#get_task_status_api_v1_voice_status_task_id_get) | **GET** /api/v1/voice/status/{task_id} | Проверить статус задачи
+[**get_task_status**](VoiceApi.md#get_task_status) | **GET** /api/v1/voice/status/{task_id} | Проверить статус задачи
 [**voice_create_task**](VoiceApi.md#voice_create_task) | **POST** /api/v1/voice/synthesize | Создать задачу озвучки
 
 
@@ -87,8 +87,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_task_status_api_v1_voice_status_task_id_get**
-> object get_task_status_api_v1_voice_status_task_id_get(task_id)
+# **get_task_status**
+> object get_task_status(task_id)
 
 Проверить статус задачи
 
@@ -127,11 +127,11 @@ with openapi_client.ApiClient(configuration) as api_client:
 
     try:
         # Проверить статус задачи
-        api_response = api_instance.get_task_status_api_v1_voice_status_task_id_get(task_id)
-        print("The response of VoiceApi->get_task_status_api_v1_voice_status_task_id_get:\n")
+        api_response = api_instance.get_task_status(task_id)
+        print("The response of VoiceApi->get_task_status:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VoiceApi->get_task_status_api_v1_voice_status_task_id_get: %s\n" % e)
+        print("Exception when calling VoiceApi->get_task_status: %s\n" % e)
 ```
 
 

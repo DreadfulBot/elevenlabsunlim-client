@@ -2,6 +2,8 @@
 
 if __import__("typing").TYPE_CHECKING:
     # import apis into api package
+    from openapi_client.api.common_api import CommonApi
+    from openapi_client.api.user_api import UserApi
     from openapi_client.api.voice_api import VoiceApi
     
 else:
@@ -11,6 +13,8 @@ else:
         LazyModule(
             *as_package(__file__),
             """# import apis into api package
+from openapi_client.api.common_api import CommonApi
+from openapi_client.api.user_api import UserApi
 from openapi_client.api.voice_api import VoiceApi
 
 """,

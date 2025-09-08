@@ -93,30 +93,20 @@ configuration = openapi_client.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: HTTPBearer
-configuration = openapi_client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
 
 
 # Enter a context with an instance of the API client
 with openapi_client.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.VoiceApi(api_client)
-    task_id = 'task_id_example' # str | 
+    api_instance = openapi_client.CommonApi(api_client)
 
     try:
-        # Скачать аудиофайл
-        api_response = api_instance.download_audio(task_id)
-        print("The response of VoiceApi->download_audio:\n")
+        # Проверка состояния сервиса
+        api_response = api_instance.health_check_health_get()
+        print("The response of CommonApi->health_check_health_get:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling VoiceApi->download_audio: %s\n" % e)
+        print("Exception when calling CommonApi->health_check_health_get: %s\n" % e)
 
 ```
 
@@ -126,8 +116,11 @@ All URIs are relative to *https://elevenlabs-unlimited.net*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*CommonApi* | [**health_check_health_get**](docs/CommonApi.md#health_check_health_get) | **GET** /health | Проверка состояния сервиса
+*CommonApi* | [**root_get**](docs/CommonApi.md#root_get) | **GET** / | Информация о сервисе
+*UserApi* | [**get_user_stats**](docs/UserApi.md#get_user_stats) | **GET** /api/v1/user/stats | Статистика пользователя
 *VoiceApi* | [**download_audio**](docs/VoiceApi.md#download_audio) | **GET** /api/v1/voice/download/{task_id} | Скачать аудиофайл
-*VoiceApi* | [**get_task_status_api_v1_voice_status_task_id_get**](docs/VoiceApi.md#get_task_status_api_v1_voice_status_task_id_get) | **GET** /api/v1/voice/status/{task_id} | Проверить статус задачи
+*VoiceApi* | [**get_task_status**](docs/VoiceApi.md#get_task_status) | **GET** /api/v1/voice/status/{task_id} | Проверить статус задачи
 *VoiceApi* | [**voice_create_task**](docs/VoiceApi.md#voice_create_task) | **POST** /api/v1/voice/synthesize | Создать задачу озвучки
 
 

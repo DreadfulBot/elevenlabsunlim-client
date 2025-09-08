@@ -305,7 +305,7 @@ class VoiceApi:
 
 
     @validate_call
-    def get_task_status_api_v1_voice_status_task_id_get(
+    def get_task_status(
         self,
         task_id: StrictStr,
         _request_timeout: Union[
@@ -349,7 +349,7 @@ class VoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_task_status_api_v1_voice_status_task_id_get_serialize(
+        _param = self._get_task_status_serialize(
             task_id=task_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -373,7 +373,7 @@ class VoiceApi:
 
 
     @validate_call
-    def get_task_status_api_v1_voice_status_task_id_get_with_http_info(
+    def get_task_status_with_http_info(
         self,
         task_id: StrictStr,
         _request_timeout: Union[
@@ -417,7 +417,7 @@ class VoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_task_status_api_v1_voice_status_task_id_get_serialize(
+        _param = self._get_task_status_serialize(
             task_id=task_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -441,7 +441,7 @@ class VoiceApi:
 
 
     @validate_call
-    def get_task_status_api_v1_voice_status_task_id_get_without_preload_content(
+    def get_task_status_without_preload_content(
         self,
         task_id: StrictStr,
         _request_timeout: Union[
@@ -485,7 +485,7 @@ class VoiceApi:
         :return: Returns the result object.
         """ # noqa: E501
 
-        _param = self._get_task_status_api_v1_voice_status_task_id_get_serialize(
+        _param = self._get_task_status_serialize(
             task_id=task_id,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -504,7 +504,7 @@ class VoiceApi:
         return response_data.response
 
 
-    def _get_task_status_api_v1_voice_status_task_id_get_serialize(
+    def _get_task_status_serialize(
         self,
         task_id,
         _request_auth,

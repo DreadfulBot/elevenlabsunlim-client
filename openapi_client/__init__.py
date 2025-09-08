@@ -19,6 +19,8 @@ __version__ = "1.0.0"
 
 # Define package exports
 __all__ = [
+    "CommonApi",
+    "UserApi",
     "VoiceApi",
     "ApiResponse",
     "ApiClient",
@@ -39,6 +41,8 @@ __all__ = [
 
 if __import__("typing").TYPE_CHECKING:
     # import apis into sdk package
+    from openapi_client.api.common_api import CommonApi as CommonApi
+    from openapi_client.api.user_api import UserApi as UserApi
     from openapi_client.api.voice_api import VoiceApi as VoiceApi
     
     # import ApiClient
@@ -69,6 +73,8 @@ else:
             ("__version__", __version__),
             ("__all__", __all__),
             """# import apis into sdk package
+from openapi_client.api.common_api import CommonApi as CommonApi
+from openapi_client.api.user_api import UserApi as UserApi
 from openapi_client.api.voice_api import VoiceApi as VoiceApi
 
 # import ApiClient

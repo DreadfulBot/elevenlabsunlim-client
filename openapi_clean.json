@@ -103,7 +103,7 @@
         ],
         "summary": "Проверить статус задачи",
         "description": "Получить текущий статус и прогресс выполнения задачи озвучки",
-        "operationId": "get_task_status_api_v1_voice_status__task_id__get",
+        "operationId": "get_task_status",
         "security": [
           {
             "HTTPBearer": []
