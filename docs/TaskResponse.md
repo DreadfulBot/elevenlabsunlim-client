@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.task_response import TaskResponse
+from elevenlabsunlimited.models.task_response import TaskResponse
 
 # TODO update the JSON string below
 json = "{}"

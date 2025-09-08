@@ -1,8 +1,9 @@
 generate_client:
-	rm -r openapi_client || true
+	rm -r elevenlabsunlimited || true
 
 	openapi-generator generate \
 		-i openapi_clean.json \
 		-g python \
 		-o . \
-		--skip-validate-spec
+		--skip-validate-spec \
+		--package-name elevenlabsunlimited

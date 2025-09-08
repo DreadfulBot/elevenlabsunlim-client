@@ -1,4 +1,4 @@
-# openapi_client.CommonApi
+# elevenlabsunlimited.CommonApi
 
 All URIs are relative to *https://elevenlabs-unlimited.net*
 
@@ -19,21 +19,21 @@ Method | HTTP request | Description
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CommonApi(api_client)
+    api_instance = elevenlabsunlimited.CommonApi(api_client)
 
     try:
         # Проверка состояния сервиса
@@ -82,21 +82,21 @@ No authorization required
 
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CommonApi(api_client)
+    api_instance = elevenlabsunlimited.CommonApi(api_client)
 
     try:
         # Информация о сервисе

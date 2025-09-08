@@ -1,4 +1,4 @@
-# openapi_client.UserApi
+# elevenlabsunlimited.UserApi
 
 All URIs are relative to *https://elevenlabs-unlimited.net*
 
@@ -19,14 +19,14 @@ Method | HTTP request | Description
 * Bearer Authentication (HTTPBearer):
 
 ```python
-import openapi_client
-from openapi_client.models.user_stats import UserStats
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.models.user_stats import UserStats
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
@@ -36,14 +36,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: HTTPBearer
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.UserApi(api_client)
+    api_instance = elevenlabsunlimited.UserApi(api_client)
 
     try:
         # Статистика пользователя

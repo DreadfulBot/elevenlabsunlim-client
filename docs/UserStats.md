@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.user_stats import UserStats
+from elevenlabsunlimited.models.user_stats import UserStats
 
 # TODO update the JSON string below
 json = "{}"

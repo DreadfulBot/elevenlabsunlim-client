@@ -1,4 +1,4 @@
-# openapi-client
+# elevenlabsunlimited
 
 ## Описание сервиса
 
@@ -56,7 +56,7 @@ pip install git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git
 
 Then import the package:
 ```python
-import openapi_client
+import elevenlabsunlimited
 ```
 
 ### Setuptools
@@ -70,7 +70,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import openapi_client
+import elevenlabsunlimited
 ```
 
 ### Tests
@@ -83,22 +83,22 @@ Please follow the [installation procedure](#installation--usage) and then run th
 
 ```python
 
-import openapi_client
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
 
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.CommonApi(api_client)
+    api_instance = elevenlabsunlimited.CommonApi(api_client)
 
     try:
         # Проверка состояния сервиса

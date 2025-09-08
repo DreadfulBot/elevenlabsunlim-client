@@ -1,4 +1,4 @@
-# openapi_client.VoiceApi
+# elevenlabsunlimited.VoiceApi
 
 All URIs are relative to *https://elevenlabs-unlimited.net*
 
@@ -21,13 +21,13 @@ Method | HTTP request | Description
 * Bearer Authentication (HTTPBearer):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
@@ -37,14 +37,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: HTTPBearer
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.VoiceApi(api_client)
+    api_instance = elevenlabsunlimited.VoiceApi(api_client)
     task_id = 'task_id_example' # str | 
 
     try:
@@ -99,13 +99,13 @@ Name | Type | Description  | Notes
 * Bearer Authentication (HTTPBearer):
 
 ```python
-import openapi_client
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
@@ -115,14 +115,14 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: HTTPBearer
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.VoiceApi(api_client)
+    api_instance = elevenlabsunlimited.VoiceApi(api_client)
     task_id = 'task_id_example' # str | 
 
     try:
@@ -175,15 +175,15 @@ Name | Type | Description  | Notes
 * Bearer Authentication (HTTPBearer):
 
 ```python
-import openapi_client
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.voice_request import VoiceRequest
-from openapi_client.rest import ApiException
+import elevenlabsunlimited
+from elevenlabsunlimited.models.task_response import TaskResponse
+from elevenlabsunlimited.models.voice_request import VoiceRequest
+from elevenlabsunlimited.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://elevenlabs-unlimited.net
 # See configuration.py for a list of all supported configuration parameters.
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     host = "https://elevenlabs-unlimited.net"
 )
 
@@ -193,15 +193,15 @@ configuration = openapi_client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: HTTPBearer
-configuration = openapi_client.Configuration(
+configuration = elevenlabsunlimited.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with openapi_client.ApiClient(configuration) as api_client:
+with elevenlabsunlimited.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = openapi_client.VoiceApi(api_client)
-    voice_request = openapi_client.VoiceRequest() # VoiceRequest | 
+    api_instance = elevenlabsunlimited.VoiceApi(api_client)
+    voice_request = elevenlabsunlimited.VoiceRequest() # VoiceRequest | 
 
     try:
         # Создать задачу озвучки

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from openapi_client.models.voice_request import VoiceRequest
+from elevenlabsunlimited.models.voice_request import VoiceRequest
 
 # TODO update the JSON string below
 json = "{}"

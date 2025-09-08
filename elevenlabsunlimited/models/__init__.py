@@ -16,12 +16,12 @@
 
 if __import__("typing").TYPE_CHECKING:
     # import models into model package
-    from openapi_client.models.http_validation_error import HTTPValidationError
-    from openapi_client.models.location_inner import LocationInner
-    from openapi_client.models.task_response import TaskResponse
-    from openapi_client.models.user_stats import UserStats
-    from openapi_client.models.validation_error import ValidationError
-    from openapi_client.models.voice_request import VoiceRequest
+    from elevenlabsunlimited.models.http_validation_error import HTTPValidationError
+    from elevenlabsunlimited.models.location_inner import LocationInner
+    from elevenlabsunlimited.models.task_response import TaskResponse
+    from elevenlabsunlimited.models.user_stats import UserStats
+    from elevenlabsunlimited.models.validation_error import ValidationError
+    from elevenlabsunlimited.models.voice_request import VoiceRequest
     
 else:
     from lazy_imports import LazyModule, as_package, load
@@ -30,12 +30,12 @@ else:
         LazyModule(
             *as_package(__file__),
             """# import models into model package
-from openapi_client.models.http_validation_error import HTTPValidationError
-from openapi_client.models.location_inner import LocationInner
-from openapi_client.models.task_response import TaskResponse
-from openapi_client.models.user_stats import UserStats
-from openapi_client.models.validation_error import ValidationError
-from openapi_client.models.voice_request import VoiceRequest
+from elevenlabsunlimited.models.http_validation_error import HTTPValidationError
+from elevenlabsunlimited.models.location_inner import LocationInner
+from elevenlabsunlimited.models.task_response import TaskResponse
+from elevenlabsunlimited.models.user_stats import UserStats
+from elevenlabsunlimited.models.validation_error import ValidationError
+from elevenlabsunlimited.models.voice_request import VoiceRequest
 
 """,
             name=__name__,

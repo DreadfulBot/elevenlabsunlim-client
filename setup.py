@@ -21,7 +21,7 @@ from setuptools import setup, find_packages  # noqa: H301
 #
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
-NAME = "openapi-client"
+NAME = "elevenlabsunlimited"
 VERSION = "1.0.0"
 PYTHON_REQUIRES = ">= 3.9"
 REQUIRES = [
@@ -48,5 +48,5 @@ setup(
     long_description="""\
      ## Описание сервиса  **Voicer API** — это современная система для преобразования текста в речь с использованием технологий ElevenLabs.  ### Основные возможности: - Более 50 голосов различных языков и стилей - Быстрая обработка больших текстов (до 500,000 символов) - Отслеживание прогресса выполнения задач в реальном времени - Безопасная авторизация по токенам - Простая интеграция через REST API  ### Базовый URL: &#x60;&#x60;&#x60; https://elevenlabs-unlimited.net/api/v1 &#x60;&#x60;&#x60;  ### Авторизация: Все запросы требуют заголовок авторизации: &#x60;&#x60;&#x60; Authorization: Bearer YOUR_API_TOKEN &#x60;&#x60;&#x60;  ### Поддерживаемые модели: - &#x60;eleven_multilingual_v2&#x60; — Многоязычная модель (рекомендуется) - &#x60;eleven_turbo_v2&#x60; — Быстрая модель для коротких текстов   - &#x60;eleven_turbo_v2_5&#x60; — Улучшенная быстрая модель - &#x60;eleven_v3&#x60; — Новейшая модель с улучшенным качеством  ### Поддержка: - Email: support@voicer-api.com - Telegram: @voicer_support     
     """,  # noqa: E501
-    package_data={"openapi_client": ["py.typed"]},
+    package_data={"elevenlabsunlimited": ["py.typed"]},
 )

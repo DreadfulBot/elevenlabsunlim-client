@@ -2,9 +2,9 @@
 
 if __import__("typing").TYPE_CHECKING:
     # import apis into api package
-    from openapi_client.api.common_api import CommonApi
-    from openapi_client.api.user_api import UserApi
-    from openapi_client.api.voice_api import VoiceApi
+    from elevenlabsunlimited.api.common_api import CommonApi
+    from elevenlabsunlimited.api.user_api import UserApi
+    from elevenlabsunlimited.api.voice_api import VoiceApi
     
 else:
     from lazy_imports import LazyModule, as_package, load
@@ -13,9 +13,9 @@ else:
         LazyModule(
             *as_package(__file__),
             """# import apis into api package
-from openapi_client.api.common_api import CommonApi
-from openapi_client.api.user_api import UserApi
-from openapi_client.api.voice_api import VoiceApi
+from elevenlabsunlimited.api.common_api import CommonApi
+from elevenlabsunlimited.api.user_api import UserApi
+from elevenlabsunlimited.api.voice_api import VoiceApi
 
 """,
             name=__name__,

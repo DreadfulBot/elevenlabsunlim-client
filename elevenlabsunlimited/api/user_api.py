@@ -17,11 +17,11 @@ from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
 
-from openapi_client.models.user_stats import UserStats
+from elevenlabsunlimited.models.user_stats import UserStats
 
-from openapi_client.api_client import ApiClient, RequestSerialized
-from openapi_client.api_response import ApiResponse
-from openapi_client.rest import RESTResponseType
+from elevenlabsunlimited.api_client import ApiClient, RequestSerialized
+from elevenlabsunlimited.api_response import ApiResponse
+from elevenlabsunlimited.rest import RESTResponseType
 
 
 class UserApi:
